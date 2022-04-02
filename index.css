@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto+Condensed:wght@700&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+body {
+    height: 10vh;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+.header {
+    min-height: 100vh;
+    background: url(bg1.jpg) no-repeat;
+    background-size: cover;
+}
+.head {
+    z-index: 0;
+    width: 100vw;
+    height: 12vh;
+    position: fixed;
+}
+.navigation {
+    height: 11vh;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.navigation ul{
+    width: 50%;
+    height: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.text01 img {
+    z-index: 20;
+    padding: -15px;
+    cursor: pointer;
+    width: 10vh;
+    position: absolute;
+    top: 0.5vh;
+    left: 1vw;
+}
+.navigation ul li a:hover {
+    border: solid transparent;
+    font-size: 22px;
+    background-color: white;
+    box-shadow: 3px 3px 2px grey;
+}
+.navigation ul li {
+    display: inline-flex;
+    font-size: 3vh;
+    font-weight: 700;
+}
+.navigation ul li a {
+    color: black;
+    transition:0.5s;
+    border-radius: 10px;
+    padding: 1vh 0.5vh;
+    cursor: pointer;
+    text-decoration: none;
+}
+.bars {
+    z-index: 10;
+    font-size: 4vh;
+    position: relative;
+    top: 3vh;
+    left: 90vw;
+}
+.bars1 {
+    z-index: 20;
+    font-size: 4vh;
+    position: relative;
+    top: 2.5vh;
+    left: 37vw;
+}
+.navigationbar{
+    width: 100vw;
+    height: 100vh;
+
+}
+.navbarcont {
+    z-index: 20;
+    transition: 0.5s;
+    position: relative;
+    top: -8vh;
+    left: 100vh;
+    backdrop-filter: blur(10px);
+    background: transparent;
+    width: 100vw;
+}
+.navbarcont ul {
+    text-align: center;
+    font-size: 4vh;
+    list-style-type: none;
+    line-height: 5vh;
+}
+.navbarcont ul li a{
+    font-family: 'Roboto Condensed', sans-serif;
+    left: -3vh;
+    border-bottom: solid;
+    position: relative;
+    color: #1f1f1f;
+    text-decoration: none;
+}
+.btn {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 35vh;
+    width: 100%;   
+}
+.btn a img{
+    z-index: 1;
+    width: 35vh;
+}
+.quote {
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 6vh;
+    font-weight: 900;
+    font-family: 'Great Vibes', cursive;
+    position: absolute;
+    top: 60vh;
+}
+.content {
+    background: url(bg1.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+@media only screen and (max-width: 425px) {
+    .navigation{
+        display:none;
+    }
+}
+@media only screen and (max-width:768px) {
+    .navigation ul {
+        width: 65%;
+    }
+}
+@media only screen and (min-width:709px) {
+    .navigation {
+        display: none;
+    }
+}
