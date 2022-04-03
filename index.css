@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto+Condensed:wght@700&display=swap');
 html {
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-behavior: smooth;;
 }
 body {
     height: 10vh;
@@ -133,6 +134,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
+    width: 100vw;
 }
 .content {
     background: rgba(0, 0, 0, 0.412);
@@ -142,8 +144,10 @@ body {
     height: 89vh;
 }
 .panel {
+    border: solid;
     position: relative;
     top: 2vh;
+    width: 90vw;
     display: flex;
     justify-content: space-evenly;
 
@@ -156,7 +160,7 @@ option {
 select{
     height: 20px;
     overflow: scroll;
-    border: solid red;
+    border: solid transparent;
     color: white;
     background-color: rgb(255, 255, 255, 0.1);
     width: 25vh;
