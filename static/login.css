@@ -4,11 +4,12 @@ html {
     scroll-behavior: smooth;;
 }
 body {
-    height: 10vh;
+    overflow-y: hidden;
     margin: 0;
     scroll-behavior: smooth;
 }
 .header {
+    border: solid;
     min-height: 100vh;
     background: url(/static/img/bg1.jpg) no-repeat;
     background-size: cover;
@@ -106,74 +107,47 @@ body {
 .navbarcont ul li a:hover {
     border-bottom: white;
 }
-.btn {
-    z-index: 0;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 35vh;
-    width: 100%;   
-}
-.btn a {
-    z-index: 0;
-}
-.btn a img{
-    z-index: 0;
-    width: 35vh;
-}
-.quote {
-    z-index: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 6vh;
-    font-weight: 900;
-    font-family: 'Great Vibes', cursive;
-    position: absolute;
-    top: 60vh;
-}
-.body{
-    z-index: 10;
-    background: url(/static/img/bg1.jpg) no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh;
-    width: 100vw;
-}
-.content {
-    border: solid;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.412);
-    backdrop-filter: blur(5px);
+.body {
     position: relative;
-    top: 11vh;
-    height: 89vh;
+    top: 35vh;
 }
-.exp {
-    z-index: 10;
+form {
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 5vh;
+    width: 70vw;
+    display: block;
+    position: relative;
+    top: 0vh;
+    left: 20vw;
 }
-.panel {
-    border: solid transparent;
+.title {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-bottom: 2vh;
+    font-size: 4vh;
+    display: flex;
+    justify-content: center;
+}
+.error {
+    opacity: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+#submit {
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 4vh;
+    border: solid grey;
+    border-radius: 5px;
+    width: 15vh;
     position: relative;
     top: 2vh;
-    left: 3vh;
-    width: 90vw;
-    display: flex;
-    justify-content: space-around;
-
+    left: 8vh;
 }
-option {
-    
-    color: black;
-    background: rgba(42, 0, 0, 0);
-}
-select{
-    height: 20px;
-    overflow: scroll;
-    border: solid transparent;
+#submit:hover {
+    border: transparent;
     color: white;
-    background-color: rgb(255, 255, 255, 0.1);
-    width: 25vh;
+    background-color: blueviolet;
 }
 @media only screen and (max-width: 425px) {
     .navigation{
