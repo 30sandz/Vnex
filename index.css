@@ -107,19 +107,22 @@ body {
     border-bottom: white;
 }
 .btn {
-    z-index: 1;
+    z-index: 0;
     display: flex;
     justify-content: center;
     position: absolute;
     top: 35vh;
     width: 100%;   
 }
+.btn a {
+    z-index: 0;
+}
 .btn a img{
-    z-index: 1;
+    z-index: 0;
     width: 35vh;
 }
 .quote {
-    z-index: 10;
+    z-index: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -130,6 +133,7 @@ body {
     top: 60vh;
 }
 .body{
+    z-index: 10;
     background: url(bg1.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -137,19 +141,24 @@ body {
     width: 100vw;
 }
 .content {
+    z-index: 10;
     background: rgba(0, 0, 0, 0.412);
     backdrop-filter: blur(5px);
     position: relative;
     top: 11vh;
     height: 89vh;
 }
+.exp {
+    z-index: 10;
+}
 .panel {
-    border: solid;
+    border: solid transparent;
     position: relative;
     top: 2vh;
+    left: 3vh;
     width: 90vw;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
 }
 option {
