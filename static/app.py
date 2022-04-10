@@ -1,3 +1,4 @@
+from webbrowser import get
 from flask import Flask, render_template,redirect,url_for,request,flash
 import os
 import sqlite3
@@ -24,19 +25,21 @@ def add():
 def log():
     return render_template('login.html', title="login")
 
-# @app.route('/admin_page',methods=['POST' ,'GET'])
-# def admin():
-#    name = request.form['username']
-#   pass = [request.form['password']
-#    if name not in users:
-#        return render_template('login.html')
-#        flash('Invalid username or password')
-#    else:
-#        if users[name]!= pass:
-#            return render_template('login.html')
-#            flash('invalid username or password')
-#        else:
-#            return render_template('admin.html')
+@app.route('/admin_page',methods=['POST' ,'GET'])
+def admin():
+    if request.method == 'POST':
+        name = request.form["username"]
+        password = request.form["password"]
+
+        if name not in users:
+            return render_template('login.html')
+            flash('Invalid username or password')
+        else:
+            if users[name]!= password:
+                return render_template('login.html')
+                flash('invalid username or password')
+            else:
+                return render_template('admin.html')
 @app.route('/upload', methods=['GET', 'POST'])
 def uploadimg():
 
