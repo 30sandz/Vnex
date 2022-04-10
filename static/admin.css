@@ -1,0 +1,38 @@
+html {
+    overflow-x: hidden;
+}
+.form {
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    top: 40vh;
+    width: 100vw;
+}
+form{
+    line-height: 7vh;
+    text-align: center;
+    display:flexbox;
+    height: 25vh;
+    display: flexbox;
+    justify-content: center;
+}
+
+#imgbtn {
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 4vh;
+    border: solid grey;
+    border-radius: 5px;
+    width: 15vh;
+    position: relative;
+    top: 2vh;
+}
+#imgbtn:hover {
+    border: transparent;
+    color: white;
+    background-color: blueviolet;
+}
+
+#images {
+    height: 15vh;
+    width: 25vw;
+    box-shadow: 5px 5px 15px 3px black;
+}

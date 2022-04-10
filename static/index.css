@@ -1,128 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto+Condensed:wght@700&display=swap');
 html {
     overflow-x: hidden;
-    scroll-behavior: smooth;;
-}
-body {
-    height: 10vh;
-    margin: 0;
-    scroll-behavior: smooth;
-}
-.header {
-    min-height: 100vh;
-    background: url(/static/img/bg1.jpg) no-repeat;
-    background-size: cover;
-}
-.head {
-    z-index: 0;
-    width: 100vw;
-    height: 12vh;
-    position: fixed;
-}
-.navigation {
-    height: 11vh;
-    z-index: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-.navigation ul{
-    width: 50%;
-    height: 7vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.text01 img {
-    z-index: 20;
-    padding: -15px;
-    cursor: pointer;
-    width: 10vh;
-    position: absolute;
-    top: 0.5vh;
-    left: 1vw;
-}
-.navigation ul li a:hover {
-    border: solid transparent;
-    font-size: 22px;
-    background-color: white;
-    box-shadow: 3px 3px 2px grey;
-}
-.navigation ul li {
-    display: inline-flex;
-    font-size: 3vh;
-    font-weight: 700;
-}
-.navigation ul li a {
-    color: black;
-    transition:0.5s;
-    border-radius: 10px;
-    padding: 1vh 0.5vh;
-    cursor: pointer;
-    text-decoration: none;
-}
-.bars {
-    z-index: 10;
-    font-size: 4vh;
-    position: relative;
-    top: 3vh;
-    left: 90vw;
-}
-.bars1 {
-    z-index: 20;
-    font-size: 4vh;
-    position: relative;
-    top: 2.5vh;
-    left: 37vw;
-}
-.navigationbar{
-    width: 100vw;
-    height: 100vh;
-
-}
-.navbarcont {
-    z-index: 20;
-    transition: 0.5s;
-    position: relative;
-    top: -8vh;
-    left: 100vh;
-    backdrop-filter: blur(10px);
-    background: transparent;
-    width: 100vw;
-}
-.navbarcont ul {
-    text-align: center;
-    font-size: 4vh;
-    list-style-type: none;
-    line-height: 5vh;
-}
-.navbarcont ul li a{
-    font-family: 'Roboto Condensed', sans-serif;
-    left: -3vh;
-    border-bottom: solid;
-    position: relative;
-    color: #1f1f1f;
-    text-decoration: none;
-}
-.navbarcont ul li a:hover {
-    border-bottom: white;
 }
 .btn {
-    z-index: 0;
     display: flex;
     justify-content: center;
     position: absolute;
     top: 35vh;
     width: 100%;   
 }
-.btn a {
-    z-index: 0;
-}
 .btn a img{
-    z-index: 0;
     width: 35vh;
 }
 .quote {
-    z-index: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -133,27 +22,27 @@ body {
     top: 60vh;
 }
 .body{
-    z-index: 10;
+    overflow-x: hidden;
+    z-index: -1;
     background: url(/static/img/bg1.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
     width: 100vw;
+    position: relative;
+    top: 0vh;
 }
 .content {
-    border: solid;
-    z-index: 10;
     background: rgba(0, 0, 0, 0.412);
     backdrop-filter: blur(5px);
     position: relative;
-    top: 11vh;
+    top: 13vh;
     height: 89vh;
 }
 .exp {
-    z-index: 10;
+    z-index: 0;
 }
 .panel {
-    border: solid transparent;
     position: relative;
     top: 2vh;
     left: 3vh;
@@ -170,23 +59,15 @@ option {
 select{
     height: 20px;
     overflow: scroll;
-    border: solid transparent;
+    border: transparent;
     color: white;
     background-color: rgb(255, 255, 255, 0.1);
     width: 25vh;
 }
-@media only screen and (max-width: 425px) {
-    .navigation{
-        display:none;
-    }
-}
-@media only screen and (max-width:768px) {
-    .navigation ul {
-        width: 65%;
-    }
-}
-@media only screen and (min-width:709px) {
-    .navigationbar {
-        display: none;
-    }
+
+#images {
+    position: absolute;
+    top: -25vh;
+    height: 25vh;
+    width: 25vh;
 }

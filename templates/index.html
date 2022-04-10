@@ -1,88 +1,65 @@
+{% extends "style.html" %}
+{% block content%}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vnex</title>
-    <link rel="stylesheet" href="/static/index.css">
-    <script src="https://kit.fontawesome.com/aaba3a110c.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="/static/img/nexlogo.png">
-    <script src="/static/index.js"></script>
-</head>
 <body>
-    <div class="header fluid-container col-sm-12" id="header" >
-        <div class="head" id="head">
-            <div class="navigation" id="navigation">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/templates/contact.html">Contact us</a></li>
-                    <li><a href="login">Login</a></li>
-                    <li><a href="">lorem</a></li>
-                    <li><a href="">lorem</a></li>
-                </ul>
-            </div>
-            <div class="navigationbar" id="navigationbar"">
-                <i class="bars fa-solid fa-bars-staggered" onclick="navbarOpen()"></i>
-                <div class="navbarcont" id="navbarcont">
-                    <ul>
-                        <i class="bars1 fa-solid fa-bars-staggered" onclick="navbarClose()"></i>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Contact us</a></li>
-                        <li><a href="">Login</a></li>
-                        <li><a href="">lorem</a></li>
-                        <li><a href="">lorem</a></li>
-                    </ul>
-                </div>
-            </div>
-            <h2 class="text01">
-                <img src="/static/img/nexlogo.png" alt="">
-            </h2>
-        </div>
-        <div class="btn">
-            <a href="#content">
-                <img src="/static/img/nex1.png">
-            </a>
-        </div>
-        <div class="quote">
-            <p>Knowledge is power</p>
-        </div>
-    </div>
-    <div class="body">
-        <div class="content" id="content">
-            <div class="exp">
-                <div class="panel">
-                    <div class="std">
-                        <select name="" id="">
-                            <option value="std">Select Std</option>
-                            <option value="11th">11th</option>
-                        </select>
-                    </div>
-                    <div class="sub">
-                        <select name="" id="">
-                            <option value="subject">Choose subject</option>
-                            <option value="Tamil">Tamil</option>
-                            <option value="English">English</option>
-                            <option value="Maths">Maths</option>
-                            <option value="Physics">Physics</option>
-                            <option value="Chemistry">Chemistry</option>
-                            <option value="CSC">CSC</option>
-                            <option value="Bio-Bot">Bio-Bot</option>
-                            <option value="Bio-Zoo">Bio-Zoo</option>
-                            <option value="Botany">Botany</option>
-                            <option value="Zoology">Zoology</option>
-                            <option value="Compl.Appl">Compl.Appl</option>
-                            <option value="Commerce">Commerce</option>
-                            <option value="Eco">Eco</option>
-                            <option value="B.Maths">B.Maths</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="sub-eng" id="data">
+    
+<title>{{title}}</title>
+<link rel="stylesheet" href="{{url_for ('static', filename='index.css') }}">
+<link rel="stylesheet" href="{{url_for ('static', filename='style.css') }}">
+<script src="{{url_for ('static', filename='style.js') }}"></script>
 
+<div class="btn">
+    <a href="#content">
+        <img src="/static/img/nex1.png">
+    </a>
+</div>
+<div class="quote">
+    <p>Knowledge is power</p>
+</div>
+</div>
+<div class="body">
+    <div class="content" id="content">
+        <div class="exp">
+            <div class="panel">
+                <div class="std">
+                    <select name="" id="">
+                        <option value="std">Select Std</option>
+                        <option value="11th">11th</option>
+                    </select>
+                </div>
+                <div class="sub">
+                    <select name="" id="">
+                        <option value="subject">Choose subject</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="English">English</option>
+                        <option value="Maths">Maths</option>
+                        <option value="Physics">Physics</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="CSC">CSC</option>
+                        <option value="Bio-Bot">Bio-Bot</option>
+                        <option value="Bio-Zoo">Bio-Zoo</option>
+                        <option value="Botany">Botany</option>
+                        <option value="Zoology">Zoology</option>
+                        <option value="Compl.Appl">Compl.Appl</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Eco">Eco</option>
+                        <option value="B.Maths">B.Maths</option>
+                    </select>
+                </div>
             </div>
         </div>
+        <div class="sub-eng" id="data">
+            <div class="display">
+                {% for res in data %}
+                    <div class="image">
+                        <img src="/static/img/{{res['img']}}" alt="Image not found" id="images">
+                    </div>
+                {% endfor%}
+        </div>
+        </div>
     </div>
+</div>
 </body>
 </html>
+{% endblock%}
