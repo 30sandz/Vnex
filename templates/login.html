@@ -12,15 +12,26 @@
         Log In
     </div>
     <div class="error" id="error">
-        Invalid Username
+        {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                <span>{{ message }}</span>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
     </div>
-    <form method="POST" autocomplete="off" id="form" action="/admin_page">
+<div class="form" >
+    <form method="POST" autocomplete="off" id="form" action="/login_page">
         <label for="username">Username</label>
-        <input type="text" id="username" required autocomplete="false" name="username" placeholder="Enter Username">
+        <input type="text" id="username" required autocomplete="off" name="hidden" placeholder="Enter Username">
         <label for="password">Password</label>
         <input type="password" id="password" autocomplete="false" required="" name="password" placeholder="Enter Password">
         <input type="submit" id="submit" value="login" onclick="data()">
     </form>
+</div>
 </div>
 
 {% endblock%}

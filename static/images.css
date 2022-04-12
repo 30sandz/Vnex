@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+}
+.data {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+#images {
+    border: solid;
+    width: 25vh;
+}

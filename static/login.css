@@ -2,14 +2,27 @@
     position: relative;
     top: 35vh;
 }
-form {
+.form {
     font-family: 'Roboto Condensed', sans-serif;
-    line-height: 5vh;
-    width: 70vw;
-    display: block;
     position: relative;
     top: 0vh;
-    left: 20vw;
+    left: 22vw;
+    width: 55vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    background: rgba(250, 249, 249, 0.499);
+    height: 30vh;
+    line-height: 5vh;
+    border: solid rgba(0, 0, 0, 0.115);
+    border-radius: 25px;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+
 }
 .title {
     font-family: 'Roboto Condensed', sans-serif;
@@ -18,25 +31,23 @@ form {
     display: flex;
     justify-content: center;
 }
-.error {
-    opacity: 0;
-    font-family: 'Roboto Condensed', sans-serif;
-    color: red;
-    display: flex;
-    justify-content: center;
-}
 #submit {
     font-family: 'Roboto Condensed', sans-serif;
-    height: 4vh;
-    border: solid grey;
+    border: solid rgb(86, 86, 86);
     border-radius: 5px;
-    width: 15vh;
+    width: 14vh;
     position: relative;
     top: 2vh;
-    left: 8vh;
 }
 #submit:hover {
     border: transparent;
     color: white;
     background-color: blueviolet;
+}
+
+.link {
+    width: 100vw;
+    color: white;
+    position: absolute;
+    top: 100vh;
 }
