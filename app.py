@@ -1,7 +1,6 @@
-from webbrowser import get
 from flask import Flask, render_template,redirect,url_for,request,flash
 import os
-import sqlite3
+import sqlite3 
 
 app = Flask(__name__)
 
