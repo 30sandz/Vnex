@@ -1,0 +1,21 @@
+{% extends 'style.html'%}
+{% block content%}
+
+<title>{{title}}</title>
+<link rel="stylesheet" href="{{url_for ('static', filename='image.css') }}">
+
+
+<html>
+    <body>
+        
+        <div class="data">
+            {% for res in data %}
+            {% set i = loop.index %}
+        <div class="image">
+            <img src="/static/img/{{res['img']}}" alt="Image not found" id="images">
+        </div>
+        {% endfor%}
+        </div>
+    </body>
+</html>
+{%endblock}
