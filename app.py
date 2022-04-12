@@ -67,9 +67,9 @@ def uploadimg():
             cur.execute("select * from image")
             data = cur.fetchall()
             con.close()
-            return render_template("index.html", data=data)
+            return render_template("login.html", data=data)
             
-    return render_template("index.html", data=data)
+    return render_template("login.html", data=data)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -22,25 +22,22 @@ html {
     top: 60vh;
 }
 .body{
-    overflow-x: hidden;
-    z-index: -1;
+    z-index: 0;
     background: url(/static/img/bg1.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    min-height: 100vh;
+    height: 102vh;
     width: 100vw;
     position: relative;
     top: 0vh;
 }
 .content {
+    border: solid;
     background: rgba(0, 0, 0, 0.412);
     backdrop-filter: blur(5px);
     position: relative;
-    top: 13vh;
+    top: 15vh;
     height: 89vh;
-}
-.exp {
-    z-index: 0;
 }
 .panel {
     position: relative;
@@ -52,22 +49,18 @@ html {
 
 }
 option {
-    
     color: black;
     background: rgba(42, 0, 0, 0);
 }
 select{
+    z-index: 20;
     height: 20px;
-    overflow: scroll;
-    border: transparent;
+    box-shadow: 2px 5px 15px black;
     color: white;
     background-color: rgb(255, 255, 255, 0.1);
     width: 25vh;
 }
-
-#images {
-    position: absolute;
-    top: -25vh;
-    height: 25vh;
-    width: 25vh;
+.link {
+    position: relative;
+    top: 0vh;
 }

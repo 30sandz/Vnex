@@ -36,3 +36,29 @@ form{
     width: 25vw;
     box-shadow: 5px 5px 15px 3px black;
 }
+
+.panel {
+    position: relative;
+    top: 0vh;
+    left: -7vh;
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+
+}
+option {
+    color: black;
+    background: rgba(42, 0, 0, 0);
+}
+select{
+    z-index: 20;
+    height: 20px;
+    box-shadow: 2px 5px 15px black;
+    color: white;
+    background-color: rgb(255, 255, 255, 0.1);
+    width: 15vh;
+}
+.link {
+    position: relative;
+    top: 75vh;
+}
