@@ -14,13 +14,17 @@
     <div class="error" id="error">
         Invalid Username
     </div>
-    <form method="POST" autocomplete="off" id="form" action="/admin_page">
-        <label for="username">Username</label>
-        <input type="text" id="username" required autocomplete="false" name="username" placeholder="Enter Username">
-        <label for="password">Password</label>
-        <input type="password" id="password" autocomplete="false" required="" name="password" placeholder="Enter Password">
-        <input type="submit" id="submit" value="login" onclick="data()">
-    </form>
+    <div class="class">
+
+        <form method="POST" autocomplete="off" id="form" action="/admin_page">
+            <label for="username">Username</label>
+            <input type="text" id="username" required autocomplete="false" name="hidden" placeholder="Enter Username">
+            <label for="password">Password</label>
+            <input type="password" id="password" autocomplete="false" required="" name="password" placeholder="Enter Password">
+            <input type="submit" id="submit" value="login" onclick="data()">
+        </form>
+
+    </div>
 </div>
 
 {% endblock%}

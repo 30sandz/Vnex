@@ -3,15 +3,23 @@
     top: 35vh;
 }
 form {
-    font-family: 'Roboto Condensed', sans-serif;
-    line-height: 5vh;
-    width: 70vw;
-    display: block;
+    padding: 2vh;
+    height: 30vh;
+    border: solid rgba(0, 0, 0, 0.386);
     position: relative;
-    top: 0vh;
+    top: -4vh;
     left: 20vw;
+    border-radius: 10px;
+    background: transparent;
+    width: 55vw;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    line-height: 5vh;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .title {
+    background: transparent;
     font-family: 'Roboto Condensed', sans-serif;
     padding-bottom: 2vh;
     font-size: 4vh;
@@ -33,14 +41,17 @@ form {
     width: 15vh;
     position: relative;
     top: 2vh;
-    left: 8vh;
 }
 #submit:hover {
     border: transparent;
     color: white;
     background-color: blueviolet;
 }
+
 .link {
+    position: absolute;
+    top: 100vh;
+}
+.insta a {
     position: relative;
-    top: 85vh;
 }
