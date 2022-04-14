@@ -6,7 +6,7 @@
 <script src="{{ url_for('static', filename='style.js') }}"></script>
 
 <div class="form">
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <form action="/upload" method="POST" enctype="multipart/form-data" id="forms">
         
         
         <div class="title">
@@ -15,13 +15,13 @@
 
         <div class="panel">
             <div class="std">
-                <select name="" id="std" required>
+                <select name="" id="std" required name="std">
                     <option value="" disabled selected>STD</option>
                     <option value="11th">11th</option>
                 </select>
             </div>
             <div class="sub">
-                <select name="opt" id="select" required>
+                <select name="opt" id="select" required name="sub">
                     <option value="" disabled selected>Choose subject</option>
                     <option value="Tamil">Tamil</option>
                     <option value="English">English</option>
@@ -41,7 +41,9 @@
             </div>
         </div>
         
-        <input type="file" name="upload_image" required>
+        <input type="file" name="upload_image" required id="file">
+        <input type="text" name="name" placeholder="your name" id="name"><br>
+        <input type="text" name="topic" required placeholder="topic" id="topic">
          <input type="submit" id="imgbtn">
     </form>
 </div>

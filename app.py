@@ -1,4 +1,5 @@
 from distutils.log import debug
+from turtle import title
 from flask import Flask, render_template,redirect,url_for,request,flash
 import os
 import sqlite3 
@@ -7,7 +8,7 @@ app = Flask(__name__)
 
 app.secret_key = "sandeep"
 con=sqlite3.connect("image.db")
-con.execute("create table if not exists image(pid integer primary key,img TEXT)")
+con.execute("create table if not exists image(pid integer primary key,img TEXT,title TEXT,name TEXT,sub TEXT,std TEXT)")
 con.close()
 
 app.config['UPLOAD_FOLDER']="static\img"
@@ -54,13 +55,17 @@ def admin():
 def uploadimg():
     if request.method == 'POST':
         upload_image = request.files['upload_image']
+        std = request.values['std']
+        sub = request.values['sub']
+        name = request.form['name']
+        title = request.form['title']
          
         if upload_image.filename != '':
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], upload_image.filename)
             upload_image.save(filepath)
             con = sqlite3.connect("image.db")
             cur = con.cursor()
-            cur.execute("insert into image(img)values(?)", (upload_image.filename, ))
+            cur.execute("insert into image(img,title,name,std,sub)values(?,?,?,?,?)", (upload_image.filename,title,name,std,sub))
             con.commit()
             flash("file uploaded successfully")
 

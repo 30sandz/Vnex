@@ -2,7 +2,7 @@
     position: relative;
     top: 35vh;
 }
-form {
+#form {
     padding: 2vh;
     height: 30vh;
     border: solid rgba(0, 0, 0, 0.386);
