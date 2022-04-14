@@ -12,6 +12,9 @@ body {
     display: block;
     justify-content: space-between;
 }
+.std11 {
+    opacity: 0;
+}
 .images {
     border: solid;
     border-radius: 10px;
@@ -28,7 +31,7 @@ body {
 {
     font-family: 'Roboto Condensed', sans-serif;
     position: relative;
-    left: 10vw;
+    left: 20vw;
 }
 .panel {
     height: 5vh;

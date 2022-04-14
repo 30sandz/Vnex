@@ -1,4 +1,4 @@
-from flask import Flask, render_template,redirect,url_for,request,flash
+from flask import Flask, render_template,redirect,url_for,request,flash,session
 import os
 import sqlite3 
 
@@ -16,13 +16,10 @@ users = {'sandeep':'sandeep0','sandz':'sandz0'}
 def home():
     return render_template('index.html', title="Vnex")
 
-@app.route("/admin")
-def add():
-    return render_template('admin.html', title="admin")
 
 @app.route("/login")
 def log():
-    return render_template('login.html', title="login")
+    return render_template('login.html', title="Login")
 
 @app.route("/notes", methods=['POST' ,'GET'])
 def img():
@@ -37,18 +34,21 @@ def img():
 @app.route('/admin_page',methods=['POST' ,'GET'])
 def admin():
     if request.method == 'POST':
-        name = request.form["username"]
-        password = request.form["password"]
+        username = request.form['username']
+        password = request.form['password']
 
-        if name not in users:
-            return render_template('login.html')
-            flash('Invalid username or password')
-        else:
-            if users[name]!= password:
-                return render_template('login.html')
-                flash('invalid username or password')
-            else:
-                return render_template('admin.html')
+        con = sqlite3.connect("image.db")
+        con.row_factory = sqlite3.Row
+        cur = con.cursor()
+        cur.execute("select * from login where username=? and password=?" ,(username,password))
+        data = cur.fetchone()
+
+        if data:
+            session["username"]=data["username"]
+            session["password"]=data["password"]
+            return render_template('admin.html')
+        
+    return render_template('login.html')
 @app.route('/upload', methods=['GET', 'POST'])
 def uploadimg():
     if request.method == 'POST':

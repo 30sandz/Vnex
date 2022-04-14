@@ -4,17 +4,17 @@
 <link rel="stylesheet" href="{{url_for ('static', filename='image.css') }}">
 <link rel="stylesheet" href="{{url_for ('static', filename='style.css') }}">
 <script src="{{url_for ('static', filename='style.js') }}"></script>
+<script src="{{url_for ('static', filename='image.js') }}"></script>
 <html>
     <body>
         <div class="panel">
             <div class="std">
-                <select id="std" required name="std">
-                    <option value="" disabled selected>STD</option>
+                <select id="std" required name="std" onchange="stdch()">
                     <option value="std11">11th</option>
                 </select>
             </div>
             <div class="sub">
-                <select id="select" required name="sub">
+                <select id="select" required name="sub" onchange="sub()">
                     <option value="" disabled selected>Choose subject</option>
                     <option value="Tamil">Tamil</option>
                     <option value="English">English</option>
@@ -37,13 +37,14 @@
             {% for res in data %}
             {% set i = loop.index %}
                 <div class="image">
-                    <img src="/static/img/{{res['img']}}" alt="Image not found" class="images {{res['std']}} " id="{{res['sub']}}">
-                </div>
-                <div class="name  {{res['std']}}" id="{{res['sub']}}">
-                    by {{res["name"]}}
-                </div>
-                <div class="topic  {{res['std']}}" id="{{res['sub']}}">
-                    {{res["topic"]}}
+                    <img src="/static/img/{{res['img']}}" alt="Image not found" class="images {{res['std']}} img" id="{{res['sub']}}">
+                    
+                    <div class="name img {{res['std']}}" id="{{res['sub']}}">
+                        by {{res["name"]}}
+                    </div>
+                    <div class="topic img {{res['std']}}" id="{{res['sub']}}">
+                        {{res["topic"]}}
+                    </div>
                 </div>
             {% endfor%}
         </div>
