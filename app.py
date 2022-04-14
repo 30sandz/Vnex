@@ -1,3 +1,5 @@
+from dataclasses import dataclass
+from turtle import title
 from flask import Flask, render_template,redirect,url_for,request,flash
 import os
 import sqlite3 
@@ -23,6 +25,16 @@ def add():
 @app.route("/login")
 def log():
     return render_template('login.html', title="login")
+
+@app.route("/notes")
+def img():
+    con = sqlite3.connect("image.db")
+    con.row_factory = sqlite3.Row
+    cur = con.cursor()
+    cur.execute("select * from image")
+    data = cur.fetchall()
+    con.close()
+    return render_template('images.html', data=data, title="Notes")
 
 @app.route('/admin_page',methods=['POST' ,'GET'])
 def admin():
@@ -67,9 +79,9 @@ def uploadimg():
             cur.execute("select * from image")
             data = cur.fetchall()
             con.close()
-            return render_template("login.html", data=data)
+            return render_template("index.html")
             
-    return render_template("login.html", data=data)
+    return render_template("admin.html")
 
 if __name__ == "__main__":
     app.run()
