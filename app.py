@@ -1,5 +1,4 @@
-from dataclasses import dataclass
-from turtle import title
+from distutils.log import debug
 from flask import Flask, render_template,redirect,url_for,request,flash
 import os
 import sqlite3 
@@ -26,7 +25,7 @@ def add():
 def log():
     return render_template('login.html', title="login")
 
-@app.route("/notes")
+@app.route("/notes", methods=['POST' ,'GET'])
 def img():
     con = sqlite3.connect("image.db")
     con.row_factory = sqlite3.Row
@@ -53,14 +52,6 @@ def admin():
                 return render_template('admin.html')
 @app.route('/upload', methods=['GET', 'POST'])
 def uploadimg():
-
-    con = sqlite3.connect("image.db")
-    con.row_factory = sqlite3.Row
-    cur = con.cursor()
-    cur.execute("select * from image")
-    data = cur.fetchall()
-    con.close()
-
     if request.method == 'POST':
         upload_image = request.files['upload_image']
          
@@ -84,4 +75,4 @@ def uploadimg():
     return render_template("admin.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

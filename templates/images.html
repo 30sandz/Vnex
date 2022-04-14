@@ -1,9 +1,10 @@
-{% extends 'style.html'%}
+{% extends "style.html"%}
 {% block content%}
 
 <title>{{title}}</title>
 <link rel="stylesheet" href="{{url_for ('static', filename='image.css') }}">
-
+<link rel="stylesheet" href="{{url_for ('static', filename='style.css') }}">
+<script src="{{url_for ('static', filename='style.js') }}"></script>
 
 <html>
     <body>
@@ -18,4 +19,4 @@
         </div>
     </body>
 </html>
-{%endblock}
+{%endblock%}
