@@ -55,8 +55,8 @@ def admin():
 def uploadimg():
     if request.method == 'POST':
         upload_image = request.files['upload_image']
-        std = request.values['std']
-        sub = request.values['sub']
+        std = request.form.get("std")
+        sub = request.form.get("sub")
         name = request.form['name']
         title = request.form['title']
          
