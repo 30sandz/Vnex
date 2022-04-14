@@ -1,11 +1,8 @@
 body {
     width: 100vw;
-    overflow-x: hidden;
-    height: 100vh;
 }
 .data {
-    border: solid;
-    width: 90vw;
+    width: 100vw;
     overflow-y: scroll;
     height: 80vh;
     display: flex;
@@ -15,10 +12,10 @@ body {
     display: block;
     justify-content: space-between;
 }
-#images {
+.images {
     border: solid;
     border-radius: 10px;
-    width: 25vw;
+    width: 65vw;
     height: 50vh;
 }
 .topic {
@@ -33,7 +30,24 @@ body {
     position: relative;
     left: 10vw;
 }
-
+.panel {
+    height: 5vh;
+    position: relative;
+    top: 17vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+select{
+    z-index: 20;
+    height: 20px;
+    border-radius: 1vh;
+    box-shadow: 2px 5px 15px black;
+    color: black;
+    background-color: whitesmoke;
+    width: 15vh;
+}
 @media only screen and (max-width: 425px) {
     #images {
         width: 65vw;

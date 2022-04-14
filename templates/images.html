@@ -1,28 +1,53 @@
 {% extends "style.html"%}
 {% block content%}
-
 <title>{{title}}</title>
 <link rel="stylesheet" href="{{url_for ('static', filename='image.css') }}">
 <link rel="stylesheet" href="{{url_for ('static', filename='style.css') }}">
 <script src="{{url_for ('static', filename='style.js') }}"></script>
-
 <html>
     <body>
-        
+        <div class="panel">
+            <div class="std">
+                <select id="std" required name="std">
+                    <option value="" disabled selected>STD</option>
+                    <option value="std11">11th</option>
+                </select>
+            </div>
+            <div class="sub">
+                <select id="select" required name="sub">
+                    <option value="" disabled selected>Choose subject</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="English">English</option>
+                    <option value="Maths">Maths</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="CSC">CSC</option>
+                    <option value="Bio-Bot">Bio-Bot</option>
+                    <option value="Bio-Zoo">Bio-Zoo</option>
+                    <option value="Botany">Botany</option>
+                    <option value="Zoology">Zoology</option>
+                    <option value="Compl.Appl">Compl.Appl</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Eco">Eco</option>
+                    <option value="B.Maths">B.Maths</option>
+                </select>
+            </div>
+        </div>
         <div class="data">
             {% for res in data %}
             {% set i = loop.index %}
-        <div class="image">
-            <img src="/static/img/{{res['img']}}" alt="Image not found" id="images">
+                <div class="image">
+                    <img src="/static/img/{{res['img']}}" alt="Image not found" class="images {{res['std']}} " id="{{res['sub']}}">
+                </div>
+                <div class="name  {{res['std']}}" id="{{res['sub']}}">
+                    by {{res["name"]}}
+                </div>
+                <div class="topic  {{res['std']}}" id="{{res['sub']}}">
+                    {{res["topic"]}}
+                </div>
+            {% endfor%}
         </div>
-        <div class="name">
-           by {{res["name"]}}
-        </div>
-        <div class="topic">
-            {{res["topic"]}}
-        </div>
-        {% endfor%}
-        </div>
+      
     </body>
 </html>
 {%endblock%}

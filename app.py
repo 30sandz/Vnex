@@ -1,5 +1,3 @@
-from distutils.log import debug
-from turtle import title
 from flask import Flask, render_template,redirect,url_for,request,flash
 import os
 import sqlite3 
@@ -80,4 +78,4 @@ def uploadimg():
     return render_template("admin.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
