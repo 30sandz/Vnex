@@ -1,8 +1,11 @@
 body {
+    width: 100vw;
     overflow-x: hidden;
     height: 100vh;
 }
 .data {
+    border: solid;
+    width: 90vw;
     overflow-y: scroll;
     height: 80vh;
     display: flex;
@@ -17,6 +20,18 @@ body {
     border-radius: 10px;
     width: 25vw;
     height: 50vh;
+}
+.topic {
+    font-size: 4vh;
+    position: relative;
+    padding: 2vh 0vh;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.name
+{
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    left: 10vw;
 }
 
 @media only screen and (max-width: 425px) {

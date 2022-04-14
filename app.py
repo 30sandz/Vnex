@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 app.secret_key = "sandeep"
 con=sqlite3.connect("image.db")
-con.execute("create table if not exists image(pid integer primary key,img TEXT,title TEXT,name TEXT,sub TEXT,std TEXT)")
+con.execute("create table if not exists image(pid integer primary key,img TEXT,topic TEXT,name TEXT,sub TEXT,std TEXT)")
 con.close()
 
 app.config['UPLOAD_FOLDER']="static\img"
@@ -58,14 +58,14 @@ def uploadimg():
         std = request.form.get("std")
         sub = request.form.get("sub")
         name = request.form['name']
-        title = request.form['title']
+        topic = request.form['topic']
          
         if upload_image.filename != '':
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], upload_image.filename)
             upload_image.save(filepath)
             con = sqlite3.connect("image.db")
             cur = con.cursor()
-            cur.execute("insert into image(img,title,name,std,sub)values(?,?,?,?,?)", (upload_image.filename,title,name,std,sub))
+            cur.execute("insert into image(img,topic,name,std,sub)values(?,?,?,?,?)", (upload_image.filename,topic,name,std,sub))
             con.commit()
             flash("file uploaded successfully")
 
